@@ -55,7 +55,11 @@
         }
     };
 
-    setInterval(draw, 15);
+    function mainloop() {
+        draw();
+        requestAnimationFrame(mainloop);
+    }
+    requestAnimationFrame(mainloop);
 
     setupCanvas();
 
